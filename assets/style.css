@@ -186,3 +186,120 @@ a {
     margin: 0.6rem 0;
     font-weight: 300;
   }
+
+  /* product */
+.product {
+    padding: 5rem 0;
+  }
+  .product-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    top: 10px;
+  }
+  .product-item {
+    border-radius: 1rem;
+    margin: 5rem 0;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    transition: var(--transition);
+    height: 500px;
+  }
+  
+  .product-item:hover {
+    background: #f1f1f1;
+  }
+  .product-item:first-of-type {
+    margin-top: 2rem;
+  }
+  .product-item:last-of-type {
+    margin-bottom: 2rem;
+  }
+  .product-item img {
+    width: 160px;
+    margin: 0 auto;
+  }
+  .product-info {
+    padding: 2rem;
+  }
+  .product-info h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  .ratings span {
+    color: var(--emperor);
+  }
+  .product-info .text {
+    color: var(--emperor);
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .new-btn {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background: var(--brown);
+    color: #fff;
+    padding: 0.5rem 1.6rem;
+    border-radius: 5px;
+  }
+  .new-btn:hover {
+    opacity: 0.8;
+  }
+  .add-btn {
+    border-radius: 1.3rem;
+    border: none;
+    padding: 0.7rem 1.8rem;
+    background: var(--emperor);
+    margin-left: 8.5rem;
+    font-size: 1rem;
+    color: #fff;
+    position: absolute;
+    left: 29%;
+    top: 83%;
+    transform: translate(-50%, 50%);
+    transition: var(--transition);
+  }
+  
+  #btn-cart {
+    margin-bottom: 47px;
+  }
+  
+  .add-btn:hover {
+    background: #000;
+  }
+  
+  /* order */
+  .order {
+    padding: 5rem 0;
+    background: var(--emperor);
+  }
+  .order-img img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .order-content {
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  .order-title {
+    text-transform: capitalize;
+    font-size: 2.7rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .order .btn-trans {
+    margin-top: 1rem;
+  }
+  .order .btn-trans:hover {
+    background: #fff;
+    color: var(--emperor);
+  }
+  
