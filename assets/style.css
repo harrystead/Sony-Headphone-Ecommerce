@@ -366,3 +366,47 @@ button {
 .activeSlide {
   display: block;
 }
+
+/* newsletter */
+.newsletter {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(images/background-img-2.png) center/cover no-repeat fixed;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  .newsletter-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  .form-control {
+    font-size: 1rem;
+    background: transparent;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--brown);
+    color: var(--brown);
+    font-weight: 200;
+  }
+  .form-control::placeholder {
+    color: var(--brown);
+  }
+  .form-control:focus {
+    outline: none;
+  }
+  .form-control,
+  .newsletter .btn-trans {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .newsletter .btn-trans {
+    background: var(--brown);
+    border-color: var(--emperor);
+    font-size: 1.1rem;
+  }
+  .newsletter .btn-trans:hover {
+    background: #fff;
+    color: var(--emperor);
+  }
+  
