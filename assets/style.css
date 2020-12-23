@@ -527,3 +527,105 @@ button {
       margin: 0;
     }
   }
+
+  @media screen and (min-width: 992px) {
+    .navbar-toggler {
+      display: none;
+    }
+    .nav-btns {
+      display: flex;
+    }
+    .nav-btns button {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 300;
+      opacity: 0.9;
+      padding: 0.4rem 0;
+      border-width: 0.5px;
+      border-style: solid;
+      margin: 0 0.5rem;
+      width: 100px;
+      transition: var(--transition);
+    }
+    .nav-btns button:hover {
+      opacity: 1;
+    }
+    .nav-btns button:first-child {
+      border-color: var(--emperor);
+      background: var(--emperor);
+      color: #fff;
+    }
+    .nav-btns button:first-child:hover {
+      border-color: #fff;
+      background: transparent;
+    }
+    .nav-btns button:last-child {
+      border-color: #fff;
+      background: transparent;
+      color: #fff;
+    }
+    .nav-btns button:last-child:hover {
+      border-color: var(--emperor);
+      background: var(--emperor);
+    }
+    .navbar-extra-content {
+      flex: 1 0 30%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .navbar-collapse {
+      position: relative;
+      width: 100%;
+      background: transparent;
+      flex: 0 0 40%;
+    }
+    .navbar-nav {
+      display: flex;
+      margin: 0 !important;
+    }
+    .nav-item {
+      padding: 0;
+      margin: 0 0.8rem;
+    }
+    .nav-link {
+      font-size: 1rem;
+      letter-spacing: normal;
+      text-transform: capitalize;
+      color: #fff;
+    }
+    .nav-link:hover {
+      text-shadow: none;
+      color: var(--brown);
+    }
+    .navbar-brand {
+      flex: 0 0 200px;
+    }
+    .header-banner div {
+      width: 70%;
+      margin: 0 auto;
+    }
+    .product-item-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 6rem;
+    }
+    .product-item:last-of-type {
+      margin-top: 2rem;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .features-wrapper {
+      height: 800px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .feature-item:nth-child(2) {
+      border-right: 0.5px solid #cdcdcd;
+    }
+    .feature-item:nth-child(odd) .feature-icon {
+      display: block;
+      margin-top: 12rem;
+    }
+  }
