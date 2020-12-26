@@ -61,3 +61,13 @@ function hideAllSlide() {
     }
     showCurrentSlide(idCount);
   });
+
+  nextBtn.addEventListener("click", () => {
+    idCount++;
+    if (idCount == reviewSlide.length) {
+      idCount = 0;
+    }
+    showCurrentSlide(idCount);
+  });
+  
+  //-------------------------------------------------------------------\\
