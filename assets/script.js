@@ -49,25 +49,30 @@ function showCurrentSlide(id) {
 }
 
 function hideAllSlide() {
-    reviewSlide.forEach((item) => {
-      item.classList.remove("activeSlide");
-    });
-  }
-  
-  prevBtn.addEventListener("click", () => {
-    idCount--;
-    if (idCount < 0) {
-      idCount = reviewSlide.length - 1;
-    }
-    showCurrentSlide(idCount);
+  reviewSlide.forEach((item) => {
+    item.classList.remove("activeSlide");
   });
+}
 
-  nextBtn.addEventListener("click", () => {
-    idCount++;
-    if (idCount == reviewSlide.length) {
-      idCount = 0;
-    }
-    showCurrentSlide(idCount);
-  });
-  
-  //-------------------------------------------------------------------\\
+prevBtn.addEventListener("click", () => {
+  idCount--;
+  if (idCount < 0) {
+    idCount = reviewSlide.length - 1;
+  }
+  showCurrentSlide(idCount);
+});
+
+nextBtn.addEventListener("click", () => {
+  idCount++;
+  if (idCount == reviewSlide.length) {
+    idCount = 0;
+  }
+  showCurrentSlide(idCount);
+});
+
+//-------------------------------------------------------------------\\
+
+let cartNumber = parseInt(document.querySelector(".cart-items").innerText);
+let clickCounter = 0;
+let blackColorCounter = 0;
+let whiteColorCounter = 0;
