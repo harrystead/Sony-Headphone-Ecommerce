@@ -31,3 +31,9 @@ links.forEach((link) => {
     toggleBtn.firstElementChild.className = "fas fa-bars fa-fw";
   });
 });
+
+// review slider
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+let idCount = 0;
+const reviewSlide = document.querySelectorAll(".review-item");
