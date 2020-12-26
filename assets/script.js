@@ -2,17 +2,17 @@ const toggleBtn = document.getElementById("navbar-toggler");
 const navDiv = document.querySelector(".navbar-collapse");
 
 toggleBtn.addEventListener("click", () => {
-    navDiv.classList.toggle("showNav");
-    if (toggleBtn.firstElementChild.className == "fas fa-bars fa-fw") {
-      toggleBtn.firstElementChild.className = "fas fa-times fa-fw";
-      document.body.style.overflow = "hidden";
-    } else {
-      toggleBtn.firstElementChild.className = "fas fa-bars fa-fw";
-      document.body.style.overflow = "visible";
-    }
-  });
+  navDiv.classList.toggle("showNav");
+  if (toggleBtn.firstElementChild.className == "fas fa-bars fa-fw") {
+    toggleBtn.firstElementChild.className = "fas fa-times fa-fw";
+    document.body.style.overflow = "hidden";
+  } else {
+    toggleBtn.firstElementChild.className = "fas fa-bars fa-fw";
+    document.body.style.overflow = "visible";
+  }
+});
 
-  // stopping animation & transition during window resizing
+// stopping animation & transition during window resizing
 let resizeTimer;
 window.addEventListener("resize", () => {
   document.body.classList.add("resize-animation-stopper");
@@ -47,3 +47,17 @@ function showCurrentSlide(id) {
     }
   });
 }
+
+function hideAllSlide() {
+    reviewSlide.forEach((item) => {
+      item.classList.remove("activeSlide");
+    });
+  }
+  
+  prevBtn.addEventListener("click", () => {
+    idCount--;
+    if (idCount < 0) {
+      idCount = reviewSlide.length - 1;
+    }
+    showCurrentSlide(idCount);
+  });
