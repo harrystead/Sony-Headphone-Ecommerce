@@ -243,4 +243,22 @@ const quantityChanged = (event) => {
     
       }
   }
+
+  //remove button function for cart
+const removeItem = (event) => {
+    const selectedCartRow = event.target.parentElement.parentElement;
+    console.log(selectedCartRow);
+    selectedCartRow.remove();
+    console.log(selectedCartRow);
+    clickCounter--;
+    blackColorCounter--;
+    whiteColorCounter--;
+    console.log(blackColorCounter);
+    console.log(whiteColorCounter);
+  
+    if (whiteColorCounter === -1 || blackColorCounter === -1) {
+      blackColorCounter = 0;
+      whiteColorCounter = 0;
+      console.log(blackColorCounter);
+    }
   
