@@ -181,3 +181,66 @@ button.forEach((btn) => {
 });
 
 //---------------------------------------------------------\\
+
+const quantityChanged = (event) => {
+    console.log("Hello");
+  
+    //input for headphones
+    const headphoneValue = event.target.value;
+    const convertHeadphoneValue = parseInt(headphoneValue);
+    console.log(convertHeadphoneValue);
+  
+    let headphoneSubtotal = event.target.parentElement.nextElementSibling;
+    console.log(headphoneSubtotal);
+  
+    let headphoneTotal = convertHeadphoneValue * 350;
+    headphoneSubtotal.innerText = "£" + headphoneTotal;
+    console.log(headphoneTotal);
+  
+    //input for insurance
+    const quantityInsurance = document.getElementById("item-quantity-two").value;
+    const convertInsurance = parseInt(quantityInsurance);
+    console.log(convertInsurance);
+  
+    const multiplyInsurance = convertInsurance * 75;
+    const insuranceSubtotal = document.getElementById("subtotal-two");
+    insuranceSubtotal.innerText = "£" + multiplyInsurance;
+  
+    let subtotalAdd = document.getElementsByClassName("subtotal-class");
+      console.log(subtotalAdd);
+      let array = [];
+    
+      for (var i = 0; i < subtotalAdd.length; i++) {
+        const subtotalAddOne = subtotalAdd[i].innerText;
+        const price = parseFloat(subtotalAddOne.replace("£", ""));
+        array.push(price);
+        console.log(array);
+    
+        let totalOne = array[0];
+        console.log(totalOne)
+        let totalTwo = array[1];
+        console.log(totalTwo)
+        let totalThree = array[2];
+        console.log(totalThree)
+    
+        if (array.length === 3) {
+          let maxTotal = totalOne + totalTwo + totalThree;
+          document.getElementById("grand-total").innerText =
+            "Total: " + "£" + maxTotal;
+        }
+    
+        if (array.length === 2) {
+          let maxTotal = totalOne + totalTwo;
+          document.getElementById("grand-total").innerText =
+            "Total: " + "£" + maxTotal;
+        }
+    
+        if (array.length === 1) {
+          let maxTotal = totalOne;
+          document.getElementById("grand-total").innerText =
+            "Total: " + "£" + maxTotal;
+        }
+    
+      }
+  }
+  
