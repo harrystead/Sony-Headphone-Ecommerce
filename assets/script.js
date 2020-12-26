@@ -261,4 +261,46 @@ const removeItem = (event) => {
       whiteColorCounter = 0;
       console.log(blackColorCounter);
     }
+
+
+let subtotalAdd = document.getElementsByClassName("subtotal-class");
+    console.log(subtotalAdd);
+    let array = [];
+  
+    for (var i = 0; i < subtotalAdd.length; i++) {
+      const subtotalAddOne = subtotalAdd[i].innerText;
+      const price = parseFloat(subtotalAddOne.replace("£", ""));
+      array.push(price);
+      console.log(array);
+  
+      let totalOne = array[0];
+      console.log(totalOne)
+      let totalTwo = array[1];
+      console.log(totalTwo)
+      let totalThree = array[2];
+      console.log(totalThree)
+  
+      if (array.length === 3) {
+        let maxTotal = totalOne + totalTwo + totalThree;
+        document.getElementById("grand-total").innerText =
+          "Total: " + "£" + maxTotal;
+      }
+  
+      if (array.length === 2) {
+        let maxTotal = totalOne + totalTwo;
+        document.getElementById("grand-total").innerText =
+          "Total: " + "£" + maxTotal;
+      }
+  
+      if (array.length === 1) {
+        let maxTotal = totalOne;
+        document.getElementById("grand-total").innerText =
+          "Total: " + "£" + maxTotal;
+      }
+    }
+};
+
+
+//---------------------------------------------------------\\
+
   
