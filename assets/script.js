@@ -37,3 +37,13 @@ const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 let idCount = 0;
 const reviewSlide = document.querySelectorAll(".review-item");
+
+showCurrentSlide(idCount);
+function showCurrentSlide(id) {
+  hideAllSlide();
+  reviewSlide.forEach((item, idx) => {
+    if (id == idx) {
+      item.classList.add("activeSlide");
+    }
+  });
+}
