@@ -303,4 +303,39 @@ let subtotalAdd = document.getElementsByClassName("subtotal-class");
 
 //---------------------------------------------------------\\
 
+$("#remove-btn").on("click", () => {
+    $(".styled-table").css("visibility", "hidden");
+    $(".product-item").css("visibility", "visible");
+    $(".product").css("background-color", "rgba(0, 0, 0, 0.0)");
+  });
+  
+  $("#continue-btn").on("click", () => {
+    $(".styled-table").css("visibility", "hidden");
+    $(".product-item").css("visibility", "visible");
+    $(".product").css("background-color", "rgba(0, 0, 0, 0.0)");
+  });
+  
+  $("#cart-plus").on("click", () => {
+    const cartRow = document.getElementById("cart-row");
+    console.log(cartRow);
+  
+    if (cartRow) {
+      $(".styled-table").css("visibility", "visible");
+      $(".product-item").css("visibility", "hidden");
+      $(".product").css("background-color", "rgba(0, 0, 0, 0.8)");
+  
+      $("html,body").animate(
+        {
+          scrollTop: $(".product").offset().top,
+        },
+        500
+      );
+    } else {
+      alert("Shopping cart is empty.");
+    }
+  });
+  
+  //-----------------------------------------------------\\
+  
+
   
