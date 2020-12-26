@@ -21,3 +21,13 @@ window.addEventListener("resize", () => {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
+
+// navigation in small screen
+const links = document.querySelectorAll(".nav-link");
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.style.overflow = "visible";
+    navDiv.classList.remove("showNav");
+    toggleBtn.firstElementChild.className = "fas fa-bars fa-fw";
+  });
+});
