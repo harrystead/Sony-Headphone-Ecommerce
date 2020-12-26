@@ -72,7 +72,112 @@ nextBtn.addEventListener("click", () => {
 
 //-------------------------------------------------------------------\\
 
+document.addEventListener("DOMContentLoaded", () => {
+    localStorage.clear();
+  });
+
 let cartNumber = parseInt(document.querySelector(".cart-items").innerText);
 let clickCounter = 0;
 let blackColorCounter = 0;
 let whiteColorCounter = 0;
+
+//function for buttons adding to basket.
+let button = document.querySelectorAll(".add-btn");
+button.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    console.log(event.target);
+
+    $(".product-item").css("visibility", "hidden");
+    $(".product").css("background-color", "rgba(0, 0, 0, 0.8)");
+
+    clickCounter++;
+    console.log(clickCounter);
+    cartNumber = clickCounter;
+
+    const black = document.getElementById("black").id;
+    const white = document.getElementById("white").id;
+    console.log(black);
+    console.log(white);
+
+    var selected = event.target.id;
+    console.log(selected);
+
+    if (selected === black) {
+      blackColorCounter++;
+      console.log("black: ", blackColorCounter);
+    }
+
+    if (selected === white) {
+      whiteColorCounter++;
+      console.log("white: ", whiteColorCounter);
+    }
+
+    if (selected === white || selected === black) {
+      document.querySelector(".cart-items").innerText = cartNumber;
+      $(".styled-table").css("visibility", "visible");
+
+      const identify = event.target.parentElement;
+      console.log(identify);
+
+      const image = identify.children[0].src;
+      console.log(image);
+      localStorage.setItem("product image: ", image);
+      const title = identify.children[1].children[0].innerText;
+      localStorage.setItem("product image: ", image);
+      const description = identify.children[1].children[2].innerText;
+      localStorage.setItem("product description: ", description);
+
+      const price = identify.children[1].children[3].innerText;
+      const priceExact = price.substr(6, 9);
+      console.log(priceExact);
+      localStorage.setItem("product price: ", price);
+
+      const cartRowContents = `
+      <td><img id="item-image" src="${image}"></img></td>
+      <td id="item-description">${description}</td>
+      <td id="item-price">${priceExact}</td>
+      <td><input class="item-quantity-input" id="item-quantity" type="number" value="1"></td>
+      <td class="subtotal-class" id="subtotal-one">${priceExact}</td>
+      <td><button id="remove-item" class="item-remove">remove</button></td>`;
+
+      const tableOne = document.getElementById("table-row-one");
+      console.log(tableOne);
+
+      const cartRow = document.createElement("tr");
+      cartRow.setAttribute("id", "cart-row");
+      cartRow.classList.add("cart-row");
+      cartRow.innerHTML = cartRowContents;
+      tableOne.prepend(cartRow);
+
+      //add event listeners to change and remove buttons
+
+      let change = document.querySelectorAll(".item-quantity-input");
+      change.forEach((btn) => {
+        btn.addEventListener("change", quantityChanged);
+      });
+
+      const secondChange = document.getElementById("item-quantity-two");
+      secondChange.addEventListener("change", quantityChanged);
+
+      let removeItemsBasket = document.querySelectorAll(".item-remove");
+      removeItemsBasket.forEach((buttons) => {
+        buttons.addEventListener("click", removeItem);
+      });
+
+      //if both black and white already in basket don't allow to be added to cart again.
+      if (selected === black && blackColorCounter > 1 || selected === white && whiteColorCounter > 1) {
+        console.log("hello");
+        cartRow.innerHTML = "";
+        cartRow.remove();
+        alert("This item is already in your basket.");
+      }
+
+      if (blackColorCounter == 1 && whiteColorCounter == 1) {
+        const priceTwo = document.getElementById("grand-total");
+        priceTwo.innerText = "Total: £775";
+      }
+    }
+  });
+});
+
+//---------------------------------------------------------\\
