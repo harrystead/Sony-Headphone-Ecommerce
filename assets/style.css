@@ -262,7 +262,7 @@ button {
   color: #fff;
   position: absolute;
   left: 29%;
-  top: 83%;
+  top: 90%;
   transform: translate(-50%, 50%);
   transition: var(--transition);
 }
